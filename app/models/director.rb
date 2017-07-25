@@ -1,0 +1,14 @@
+class DirectorsController < ApplicationRecord
+
+
+
+
+
+
+
+
+
+
+
+
+end

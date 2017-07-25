@@ -3,4 +3,30 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount WebGit::Engine, at: "/rails/git"
+
+
+# ACTORS - NEW & CREATE
+  get("/actor/new", :controller => "actors", :action => "new_form")
+  get("/create_actor", :controller => "actors", :action => "create")
+
+
+# READ
+
+# ACTORS - INDEX & DETAILS/SHOW
+ get("/actors", :controller => "actors", :action => "index")
+ get("/actors/:actor_id", :controller => "actors", :action => "show")
+
+
+# UPDATE
+
+# ACTORS - EDIT & UPDATE
+ # get("/actors/:actor_id/edit", :controller => "actors", :action => "edit")
+#  get("/update_actor/:actor_id", :controller => "actors", :action => "update")
+
+
+# DESTROY
+
+# ACTORS
+ # get("/delete_actor/:actor_id", :controller => "actors", :action => "destroy")
+  
 end
