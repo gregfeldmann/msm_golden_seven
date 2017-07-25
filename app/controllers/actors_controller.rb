@@ -1,8 +1,10 @@
 class ActorsController < ApplicationController
     
     def index
-       
-       @actors=Actor.all
+        
+        @list_of_actors = Actor.all.order(:created_at => :desc)
+        
+        render("actors/index.html.erb")
         
     end   
     
@@ -33,9 +35,16 @@ class ActorsController < ApplicationController
         
         @current_count_actors = Actor.count
         
-        render("actors/create_actor.html.erb")
+        render("actors/create_row.html.erb")
        
     end    
     
+     def edit
+        @actor = Actor.find(params[:actor_id])
+        a = @actor
+        a.save
+        
+        render("actors/edit_actor.html.erb")
+     end
     
 end

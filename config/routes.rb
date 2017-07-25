@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 # UPDATE
 
 # ACTORS - EDIT & UPDATE
- # get("/actors/:actor_id/edit", :controller => "actors", :action => "edit")
-#  get("/update_actor/:actor_id", :controller => "actors", :action => "update")
+ get("/actors/:actor_id/edit", :controller => "actors", :action => "edit")
+ get("/update_actor/:actor_id", :controller => "actors", :action => "update")
 
 
 # DESTROY
