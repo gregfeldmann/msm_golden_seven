@@ -13,15 +13,17 @@ class DirectorsController < ApplicationController
        @director = Director.find(params[:director_id])
      
        
-       render("director/show.html.erb")
+       render("directors/show.html.erb")
        
     end    
     
     def new_form
        
-        @director = Director.find(params[:director_id])
-        
-        render("directors/new_form.html.erb")
+     @director = Director.find(params[:director_id])
+       
+       redirect_to("directors/index.html.erb")
+       
+      #  render("directors/new_form.html.erb")
     
     end
     
@@ -32,7 +34,7 @@ class DirectorsController < ApplicationController
         d.name = params[:director_name]
         d.bio = params[:director_bio]
         d.dob = params[:director_dob]
-        a.image_url = params[:director_image]
+        d.image_url = params[:director_image]
         
         d.save
         
