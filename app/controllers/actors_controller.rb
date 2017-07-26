@@ -40,11 +40,37 @@ class ActorsController < ApplicationController
     end    
     
      def edit
-        @actor = Actor.find(params[:actor_id])
-        a = @actor
-        a.save
+        @actor = Actor.find(params["actor_id"])
+        
+       # @actor.name=params["actor_name"]
+        
+        @actor.name=params["actor_name"]
+       @actor.bio=params["actor_bio"]
+        @actor.dob=params["actor_dob"]    
+        @actor.image_url=params["actor_image"]
         
         render("actors/edit_actor.html.erb")
      end
+   
+   def update
+       
+       @actor = Actor.find(params[:actor_id])
+       
+        @actor.name=params["actor_name"]
+       
+       render("actors/update_actor.html.erb")
+   end
+   
+   def destroy
+       a = Actor.find(params[:actor_id])
+      
+       a.destroy
+       a.save
+       
+       render("actors/destroy.html.erb")
+       
+        redirect_to("/actors")
+   end
+
     
 end
