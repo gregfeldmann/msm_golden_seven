@@ -67,6 +67,8 @@ class ActorsController < ApplicationController
        a.destroy
        a.save
        
+        @remaining_actors = Actor.count
+        
        render("actors/destroy.html.erb")
        
         redirect_to("/actors")

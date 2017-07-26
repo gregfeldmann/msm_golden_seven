@@ -1,14 +1,3 @@
-class DirectorsController < ApplicationRecord
-
-
-
-
-
-
-
-
-
-
-
-
+class Director < ApplicationRecord
 end
+

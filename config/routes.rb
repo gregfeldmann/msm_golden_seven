@@ -19,5 +19,20 @@ Rails.application.routes.draw do
 
 # ACTORS
  get("/delete_actor/:actor_id", :controller => "actors", :action => "destroy")
-  
+
+
+# DIRECTORS - NEW & CREATE
+  get("/director/new", :controller => "directors", :action => "new_form")
+  get("/director_actor", :controller => "directors", :action => "create")
+
+# DIRECTORS - INDEX & DETAILS/SHOW
+ get("/directors", :controller => "directors", :action => "index")
+ get("/directors/:director_id", :controller => "directors", :action => "show")
+
+# DIRECTORS - EDIT & UPDATE
+ get("/directors/:director_id/edit", :controller => "directors", :action => "edit")
+ get("/update_director/:director_id", :controller => "directors", :action => "update")
+
+# DIRECTORS
+ get("/delete_director/:director_id", :controller => "directors", :action => "destroy")  
 end
