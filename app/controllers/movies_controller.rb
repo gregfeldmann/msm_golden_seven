@@ -18,7 +18,6 @@ class MoviesController < ApplicationController
     
     def new_form
        
-        @movie = Movie.find(params[:movie_id])
         
         render("movies/new_form.html.erb")
     

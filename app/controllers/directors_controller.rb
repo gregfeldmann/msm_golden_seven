@@ -21,9 +21,8 @@ class DirectorsController < ApplicationController
        
     # @director = Director.find(params[:director_id])
        
-       redirect_to("directors/index.html.erb")
        
-      #  render("directors/new_form.html.erb")
+      render("directors/new_form.html.erb")
     
     end
     
@@ -40,8 +39,8 @@ class DirectorsController < ApplicationController
         
         @current_count_directors = Director.count
         
-        render("directors/create_row.html.erb")
-       
+        # render("directors/create_row.html.erb")
+       redirect_to("/directors")
     end    
     
      def edit
