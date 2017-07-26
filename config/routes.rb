@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
 # DIRECTORS - NEW & CREATE
   get("/director/new", :controller => "directors", :action => "new_form")
-  get("/director_actor", :controller => "directors", :action => "create")
+  get("/create_director", :controller => "directors", :action => "create")
 
 # DIRECTORS - INDEX & DETAILS/SHOW
  get("/directors", :controller => "directors", :action => "index")
@@ -35,4 +35,21 @@ Rails.application.routes.draw do
 
 # DIRECTORS
  get("/delete_director/:director_id", :controller => "directors", :action => "destroy")  
+
+
+# MOVIESS - NEW & CREATE
+  get("/movie/new", :controller => "movies", :action => "new_form")
+  get("/create_movie", :controller => "movies", :action => "create")
+
+# MOVIESS - INDEX & DETAILS/SHOW
+ get("/movies", :controller => "movies", :action => "index")
+ get("/movies/:movie_id", :controller => "movies", :action => "show")
+
+# MOVIESS - EDIT & UPDATE
+ get("/movies/:movie_id/edit", :controller => "movies", :action => "edit")
+ get("/update_movie/:movie_id", :controller => "movies", :action => "update")
+
+# MOVIESS
+ get("/delete_movie/:movie_id", :controller => "movies", :action => "destroy")  
+
 end
