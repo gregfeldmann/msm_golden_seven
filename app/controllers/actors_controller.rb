@@ -25,14 +25,16 @@ class ActorsController < ApplicationController
     
     def create
        
-       a = Actor.new
+       @actor = Actor.new
        
-        a.name = params[:actor_name]
-        a.bio = params[:actor_bio]
-        a.dob = params[:actor_dob]
-        a.image_url = params[:actor_image]
+        @actor.name = params[:actor_name]
+        @actor.bio = params[:actor_bio]
+        @actor.dob = params[:actor_dob]
+        @actor.image_url = params[:actor_image]
         
-        a.save
+          @actor_id = Actor.find(params[:id])
+          
+        @actor.save
         
         @current_count_actors = Actor.count
         
