@@ -11,7 +11,8 @@ class ActorsController < ApplicationController
     def show
        
        @actor = Actor.find(params[:actor_id])
-        
+    
+        @actor.save    
        render("actors/show.html.erb")
        
     end    
@@ -44,10 +45,10 @@ class ActorsController < ApplicationController
         
        # @actor.name=params["actor_name"]
         
-        @actor.name=params["actor_name"]
-       @actor.bio=params["actor_bio"]
-        @actor.dob=params["actor_dob"]    
-        @actor.image_url=params["actor_image"]
+      #  @actor.name=params["actor_name"]
+       # @actor.bio=params["actor_bio"]
+        # @actor.dob=params["actor_dob"]    
+        # @actor.image_url=params["actor_image"]
         
         render("actors/edit_actor.html.erb")
      end
@@ -57,6 +58,9 @@ class ActorsController < ApplicationController
        @actor = Actor.find(params[:actor_id])
        
         @actor.name=params["actor_name"]
+        
+        @actor.save
+        
        
        render("actors/update_actor.html.erb")
    end
@@ -65,13 +69,12 @@ class ActorsController < ApplicationController
        a = Actor.find(params[:actor_id])
       
        a.destroy
-       a.save
        
         @remaining_actors = Actor.count
         
        render("actors/destroy.html.erb")
        
-        redirect_to("/actors")
+       # redirect_to("/actors")
    end
 
     

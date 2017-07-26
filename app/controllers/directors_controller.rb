@@ -11,7 +11,8 @@ class DirectorsController < ApplicationController
     def show
        
        @director = Director.find(params[:director_id])
-        
+       @direct.save
+       
        render("director/show.html.erb")
        
     end    
@@ -45,10 +46,10 @@ class DirectorsController < ApplicationController
         @director = Director.find(params["director_id"])
     
         
-        @director.name=params["director_name"]
-        @director.bio=params["director_bio"]
-        @director.dob=params["director_dob"]    
-        @director.image_url=params["director_image"]
+       # @director.name=params["director_name"]
+        # @director.bio=params["director_bio"]
+        # @director.dob=params["director_dob"]    
+        # @director.image_url=params["director_image"]
         
         render("directors/edit_director.html.erb")
      end
@@ -61,6 +62,8 @@ class DirectorsController < ApplicationController
         @director.bio=params["director_bio"]
         @director.dob=params["director_dob"]
         @director.image_url=params["director_image"]
+        
+        @director.save
        
        render("directors/update_director.html.erb")
    end

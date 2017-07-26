@@ -12,6 +12,8 @@ class MoviesController < ApplicationController
        
        @movie = Movie.find(params[:movie_id])
         
+        @movie.save
+        
        render("movies/show.html.erb")
        
     end    
@@ -45,13 +47,6 @@ class MoviesController < ApplicationController
      def edit
         @movies = Movie.find(params["movie_id"])
     
-        
-        @movie.title=params["movie_title"]
-        @movie.year=params["movie_year"]
-        @movie.duration=params["movie_duration"] 
-        @movie.description=params["movie_description"]
-        @movie.image_url=params["movie_image"]
-        
         render("movies/edit_movie.html.erb")
      end
    
@@ -65,6 +60,8 @@ class MoviesController < ApplicationController
         @movie.description=params["movie_description"]
         @movie.image_url=params["movie_image"]
        
+       @movie.save
+       
        render("movies/update_movie.html.erb")
    end
    
@@ -76,7 +73,7 @@ class MoviesController < ApplicationController
        
         @remaining_movies = Movie.count
         
-       render("movies/destroy.html.erb")
+     #  render("movies/destroy.html.erb")
        
         redirect_to("/movies")
    end
