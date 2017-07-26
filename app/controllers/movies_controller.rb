@@ -12,8 +12,6 @@ class MoviesController < ApplicationController
        
        @movie = Movie.find(params[:movie_id])
         
-        @movie.save
-        
        render("movies/show.html.erb")
        
     end    

@@ -12,7 +12,7 @@ class ActorsController < ApplicationController
        
        @actor = Actor.find(params[:actor_id])
     
-        @actor.save    
+
        render("actors/show.html.erb")
        
     end    

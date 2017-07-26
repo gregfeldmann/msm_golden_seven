@@ -11,7 +11,7 @@ class DirectorsController < ApplicationController
     def show
        
        @director = Director.find(params[:director_id])
-       @direct.save
+     
        
        render("director/show.html.erb")
        
