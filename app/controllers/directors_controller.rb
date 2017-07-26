@@ -19,7 +19,7 @@ class DirectorsController < ApplicationController
     
     def new_form
        
-     @director = Director.find(params[:director_id])
+    # @director = Director.find(params[:director_id])
        
        redirect_to("directors/index.html.erb")
        
