@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     end    
     
     def new_form
-       
+      
         
         render("movies/new_form.html.erb")
     
@@ -42,7 +42,7 @@ class MoviesController < ApplicationController
     end    
     
      def edit
-        @movies = Movie.find(params["movie_id"])
+        @movie = Movie.find(params["movie_id"])
     
         render("movies/edit_movie.html.erb")
      end
