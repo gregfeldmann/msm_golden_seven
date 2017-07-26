@@ -31,8 +31,6 @@ class ActorsController < ApplicationController
         @actor.bio = params["actor_bio"]
         @actor.dob = params["actor_dob"]
         @actor.image_url = params["actor_image"]
-        
-        #  @actor_id = Actor.find(params[:id])
           
         @actor.save
         
